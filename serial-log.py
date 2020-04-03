@@ -12,13 +12,8 @@ print('************************************************************')
 
 serial_port = input('ENTER Serial-Port:')
 sensor_id = input('Enter Sensor-ID')
-data_version = input("Enter data version [Month-Day]:>>")
 
-BASIC_DATA_FOLDER_PATH = '../DATA+RESULTS/'
-folder = BASIC_DATA_FOLDER_PATH + data_version
-os.makedirs(folder, exist_ok=True)
-
-f = open(folder + sensor_id + ".csv", "a+")
+f = open(sensor_id + ".csv", "a+")
 
 ser = serial.Serial()
 ser.baudrate = 9600
