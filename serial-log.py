@@ -11,7 +11,7 @@ print('*            as Sensor id                                  *')
 print('************************************************************')
 
 serial_port = input('ENTER Serial-Port:')
-sensor_id = input('Enter Sensor-ID')
+sensor_id = input('Enter Sensor-ID:')
 
 f = open(sensor_id + ".csv", "a+")
 
@@ -24,6 +24,6 @@ while True:
     data = ser.readline()
     data = data.decode('ascii')
     data = data.replace('\r\n', '')
-    data = data + "," + str(time.time())
+    data = str(time.time()) + "," + data
     print(data)
     f.write(data + "\n")
